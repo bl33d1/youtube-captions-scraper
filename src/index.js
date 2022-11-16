@@ -4,7 +4,6 @@ const fs = require('fs');
 getSubtitles({
   videoID: 'ATlila3e9dM', // youtube video id
 }).then(function(captions) {
-  // console.log(captions);
   let captionString;
   captions.map((text) => {
     let captionSentence = text.text;
@@ -15,8 +14,5 @@ getSubtitles({
       captionString+="\n";
     }
   })
-  //console.log(captionString);
-  //const captionsString = JSON.stringify(captions[0].text.toString(), null, 4);
-  fs.writeFileSync('./first-punic-war-text-only.json', captionString);
-  //console.log(captions)
+  fs.writeFileSync('./first-punic-war-text-only.txt', captionString);
 });
